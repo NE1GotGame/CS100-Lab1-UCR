@@ -23,22 +23,22 @@ TEST(EchoTest, orderNumbers) {
 }
 
 //Test case 2
-TEST(EchoTest, BoomPowWow){
+TEST(EchoTest, MissingOneLetter){
 	char* test_val[3]; 
 	test_val[0] = "./c-echo"; 
-	test_val[1] = "boom"; 
-	test_val[2] = "pow";
-	test_val[3] = "wow";
-	EXPECT_NE("boom pow wow", echo(4, test_val));
+	test_val[1] = "hello"; 
+	test_val[2] = "world";
+	test_val[3] = "!";
+	EXPECT_NE("hello world", echo(4, test_val));
 }
 
 //Test case 3
-TEST(EchoTest, SpecialChar){
+TEST(EchoTest, TestCase3){
         char* test_val[3];
         test_val[0] = "./c-echo";
-        test_val[1] = "#%^";
-        test_val[2] = "(!";
-        EXPECT_NE("#%^ (!", echo(3, test_val));
+        test_val[1] = " ";
+	test_val[2] = " ";
+        EXPECT_NE("  ", echo(3, test_val));
 }
 
 int main(int argc, char **argv) {
